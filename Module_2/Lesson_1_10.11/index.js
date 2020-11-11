@@ -333,7 +333,7 @@ console.log("Lesson 1");
 // 3.3. Проверка множественных условий с includes()
 
 //  -= EXAMPLE =-
-const str = "Lorem ipsum dolor sit amet.";
+// const str = "Lorem ipsum dolor sit amet.";
 // const stopWords = ["sit", "ipsum"];
 
 // const words = str.split(" "); //["Lorem", "ipsum", "dolor", "sit", "amet."]
@@ -362,6 +362,8 @@ const str = "Lorem ipsum dolor sit amet.";
 
 // console.log(result);
 // ------------------------------------------------------------------------------
+
+
 
 // 4.4. Методы push(), pop(), shift(), unshift()
 // ------------------------------------------------------------------------------
