@@ -387,8 +387,20 @@
 
 // console.log(`${name}`);
 
-const arr = ["Alex", "Nikita"];
-for (const name of arr) {
-  const index = arr.indexOf(name);
-  console.log(`${index} = ${name}`);
-}
+// const arr = ["Alex", "Nikita"];
+// for (const name of arr) {
+//   const index = arr.indexOf(name);
+//   console.log(`${index} = ${name}`);
+// }
+
+// const arr = [1, 2, 3, 4, 5];
+// const arr2 = [6, 7, 8, 9, 0];
+// const result = [...arr, ...arr2];
+// console.log(result);
+
+
+
+
+// const houses = ['Arryn', 'Frey', 'Greyjoy', 'Stark', 'Lannister', 'Tyrell'];
+// console.log(houses.slice(1,3));
+// const housesInDebt = [...houses.slice(0, 4), ...houses.slice(5)];
