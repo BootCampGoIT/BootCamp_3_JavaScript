@@ -168,30 +168,30 @@
 // modify(array, "3", "name", "Milk");
 // console.log(array)
 
-const store = {
-  users: [],
-  products: [
-    { id: "1", name: "gdyjghd", price: 10 },
-    { id: "2", name: "gdyjdfdsffdghd", price: 123 },
-    { id: "3", name: "gdyjsfghd", price: 15 },
-  ],
-  cart: [],
-};
+// const store = {
+//   users: [],
+//   products: [
+//     { id: "1", name: "gdyjghd", price: 10 },
+//     { id: "2", name: "gdyjdfdsffdghd", price: 123 },
+//     { id: "3", name: "gdyjsfghd", price: 15 },
+//   ],
+//   cart: [],
+// };
 
-const addItem = (arr, item) => {
-  return [...arr, item];
-};
+// const addItem = (arr, item) => {
+//   return [...arr, item];
+// };
 
-const addToCart = (store, id) => {
-  const product = store.products.find((item) => item.id === id);
-  product.quantity = 1;
-  store.cart = [...store.cart, product];
-};
+// const addToCart = (store, id) => {
+//   const product = store.products.find((item) => item.id === id);
+//   product.quantity = 1;
+//   store.cart = [...store.cart, product];
+// };
 
-addToCart(store, "3");
-addToCart(store, "2");
+// addToCart(store, "3");
+// addToCart(store, "2");
 
-console.log(store);
+// console.log(store);
 
 // const x = {
 //     arr: []
@@ -203,3 +203,142 @@ console.log(store);
 // let arr = [];
 // arr = [...arr, 5];
 // console.log(arr);
+
+// function useDispatch() {
+//   const x = 5;
+//   return function (callback) {
+//     return callback(x);
+//   };
+// }
+// const dispatch = useDispatch();
+
+// const action = (number) => console.log("number", number);
+
+// dispatch(action);
+
+// const createRange = (initailValue) => {
+//   return function (step) {
+//     return (initailValue += step);
+//   };
+// };
+
+// const volumeRange = createRange(0);
+// console.log(volumeRange(1));
+// console.log("--------------------------");
+
+// const imageRage = createRange(50);
+// console.log(imageRage(1));
+
+// connect(mstp, mdtp)(Component)
+
+const redux = {
+  state: {},
+  reducers: {
+    contactsReducer(self, action) {
+      switch (action.type) {
+        case "action1":
+          return (self.state.contacts = [
+            ...self.state.contacts,
+            action.payload,
+          ]);
+
+        default:
+          return [];
+      }
+    },
+    todoReducer() {
+      return {
+        task: "",
+      };
+    },
+  },
+
+  setInitialState() {
+    // this.dispatch({type: "/", payload: []});
+    this.state.contacts = this.reducers.contactsReducer(this, {
+      type: "/",
+      payload: [],
+    });
+    // this.state.tasks = this.reducers.todoReducer();
+  },
+
+  getState() {
+    return this.state;
+  },
+
+  dispatch(action) {
+    this.reducers.contactsReducer(this, action);
+  },
+
+  connect(mstp, mdtp) {
+    // mdtp(this.dispatch(mdtp) );
+    return {
+      props: mstp(this.getState()),
+    };
+  },
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    dispatch1: () => {
+      dispatch(actionCreator);
+    },
+  };
+};
+const createContact = (payload) => {
+  return {
+    type: "action1",
+    payload,
+  };
+};
+
+redux.setInitialState();
+
+redux.dispatch(createContact({ name: "alex" }));
+redux.dispatch(createContact({ name: "Nikita" }));
+console.log(redux.connect((state) => state.contacts, null));
+
+
+
+// const action = function(){
+//   return 5
+// }
+const action = {}
+
+
+// redux.reducers.contactsReducer(createContact({ name: "alex" }));
+// console.log(redux.self);
+// const mapStateToProps = (state) => {
+//   return {
+//     contacts: state.contacts,
+//     tasks: state.tasks
+//   };
+// };
+
+// const result = redux.connect(mapStateToProps, null);
+// console.log(result);
+
+// const state = redux.getState();
+// console.log(state)
+
+// console.log(redux);
+
+// const mstp = {};
+// const mdtp = {};
+// connect(mstp, mdtp)("<li></li>");
+
+// const window = {
+//   x: {
+//     initailValue: 1,
+//     "133fsdsd232": function(step){
+//       return (this.initailValue += step);
+//     }
+//   },
+//   y: {
+//     initailValue: 50,
+//     "133fsdsd232": function(step){
+//       return (this.initailValue += step);
+//     }
+//   }
+
+// }
