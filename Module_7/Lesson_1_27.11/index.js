@@ -201,17 +201,22 @@ const refs = {
     email: document.forms.loginForm.email,
     password: document.forms.loginForm.password,
   },
-//   signUp: {
-//     signUpForm: document.forms.signUpForm,
-//     email: document.forms.signUpForm.email,
-//     password: document.forms.signUpForm.password,
-//   },
+  //   signUp: {
+  //     signUpForm: document.forms.signUpForm,
+  //     email: document.forms.signUpForm.email,
+  //     password: document.forms.signUpForm.password,
+  //   },
 };
 
 console.log(refs);
 
 refs.login.loginForm.addEventListener("input", getData);
 refs.login.loginForm.addEventListener("submit", submitData);
+
+refs.login.email.addEventListener("focus", (e) => console.log("Focus"));
+refs.login.email.addEventListener("blur", (e) => console.log("Blured"));
+refs.login.email.addEventListener("change", (e) => console.log("Changed"));
+// refs.login.loginForm.addEventListener("submit", submitData);
 
 // refs.signUp.signUpForm.addEventListener("input", getData);
 // refs.signUp.signUpForm.addEventListener("submit", submitData);
@@ -225,11 +230,11 @@ function getData(e) {
 
 function submitData(e) {
   e.preventDefault();
-  console.log(e.submitter.dataset.button)
-  if (e.submitter.dataset.button === 'login'){
+  console.log(e.submitter.dataset.button);
+  if (e.submitter.dataset.button === "login") {
     //   ========> data
   }
-  if (e.submitter.dataset.button === 'signUp'){
+  if (e.submitter.dataset.button === "signUp") {
     //   ========> data
   }
 }
