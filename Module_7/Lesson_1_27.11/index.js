@@ -230,6 +230,7 @@ function getData(e) {
 
 function submitData(e) {
   e.preventDefault();
+  console.log("e", e);
   console.log(e.submitter.dataset.button);
   if (e.submitter.dataset.button === "login") {
     //   ========> data
